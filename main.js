@@ -1,5 +1,5 @@
 const { Client, GatewayIntentBits, EmbedBuilder, Colors } = require('discord.js');
-const { token, apitoken } = require("./config.json");
+const { token, apitoken, approvedguildid } = require("./config.json");
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.MessageContent, GatewayIntentBits.GuildMembers, GatewayIntentBits.GuildMessageReactions] });
 
@@ -9,6 +9,10 @@ client.on('ready', () => {
 
 client.on('interactionCreate', async interaction => {
   if (!interaction.isChatInputCommand()) return;
+
+  if (interaction.guildId !== approvedguildid) {
+    return;
+  }
 
   if (interaction.commandName === 'ping') {
     await interaction.reply('Pong!');
