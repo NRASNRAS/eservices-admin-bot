@@ -18,7 +18,7 @@ client.on('interactionCreate', async interaction => {
     let user = interaction.options.getUser("person");
     let ign = interaction.options.getString('ign');
 
-    fetch('http://localhost/v1/passport/create', {
+    fetch('https://nras.dqu.one/v1/passport/create', {
         method: "post",
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
