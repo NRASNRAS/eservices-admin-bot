@@ -1,0 +1,16 @@
+{
+  "name": "nras-eservices-norway-admin-bot",
+  "version": "0.1.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js",
+    "deploycmds": "node deployCommands.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dqu1J",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^14.7.1"
+  }
+}
