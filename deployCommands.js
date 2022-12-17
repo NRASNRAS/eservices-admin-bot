@@ -7,6 +7,9 @@ const commands = [
         .setDefaultMemberPermissions(8)
         .addUserOption(option => option.setName("person").setDescription("Discord of the person you're issuing this passport to").setRequired(true))
         .addStringOption(option => option.setName("ign").setDescription("Minecraft nickname of the person you're issuing this document to").setRequired(true)),
+    new SlashCommandBuilder().setName('invalidatepassport').setDescription('Makes the passport invalid')
+        .setDefaultMemberPermissions(8)
+        .addNumberOption(option => option.setName("id").setDescription("Passport ID").setRequired(true)),
 ];
 
 const rest = new REST({ version: '10' }).setToken(token);
