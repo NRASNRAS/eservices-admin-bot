@@ -11,6 +11,6 @@
   "author": "Dqu1J",
   "license": "MIT",
   "dependencies": {
-    "discord.js": "^14.7.1"
+    "discord.js": "^14.7.2-dev.1677672308-dc142c4.0"
   }
 }
