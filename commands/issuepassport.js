@@ -6,7 +6,7 @@ async function issuePassportCommand(interaction) {
     let ign = interaction.options.getString('ign');
     let place = interaction.options.getString('place');
 
-    const buttonId = `create ${ign}`;
+    const buttonId = `create ${ign} ${Math.floor(Math.random() * 1000000)}`;
 
     if (user) {
         interaction.editReply({

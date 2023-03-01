@@ -6,7 +6,7 @@ async function invalidatePassportCommand(interaction) {
     let userid = interaction.user.id;
 
     apiFetch('/v1/passport/' + id, undefined, (res) => {
-        const buttonId = `invalide ${id}`;
+        const buttonId = `invalide ${id} ${Math.floor(Math.random() * 1000000)}`;
 
         interaction.editReply({
             content: `Are you really sure you want to invalidate ${res.username}'s passport with ID ${id}?`,
