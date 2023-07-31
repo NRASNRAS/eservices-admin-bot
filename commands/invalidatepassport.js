@@ -1,7 +1,7 @@
 const { ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');
 const { apiFetch, postFlags } = require('../util');
 
-async function invalidatePassportCommand(interaction) {
+async function invalidatePassportCommand(interaction, apitoken) {
     let id = interaction.options.getNumber('id');
     let userid = interaction.user.id;
 
@@ -24,7 +24,7 @@ async function invalidatePassportCommand(interaction) {
 
             apiFetch('/v1/passport/invalidate', postFlags({
                 "id": id
-            }), (res) => {}, (res) => {
+            }, apitoken), (res) => {}, (res) => {
                 i.editReply({content: res, components: []});
             });
         });

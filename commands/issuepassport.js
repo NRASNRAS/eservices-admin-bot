@@ -1,7 +1,7 @@
 const { EmbedBuilder, Colors, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');
 const { apiFetch, postFlags } = require('../util');
 
-async function issuePassportCommand(interaction) {
+async function issuePassportCommand(interaction, apitoken) {
     let user = interaction.options.getUser("person");
     let ign = interaction.options.getString('ign');
     let place = interaction.options.getString('place');
@@ -37,7 +37,7 @@ async function issuePassportCommand(interaction) {
             "discord": user ? user.id : "",
             "issuedby": interaction.user.id,
             "place": place
-        }), (res) => {
+        }, apitoken), (res) => {
             let embed = new EmbedBuilder()
                 .setTitle("Passport Issued: " + res.type)
                 .setColor(res.type === "success" ? Colors.Green : Colors.Red)

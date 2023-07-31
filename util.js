@@ -1,11 +1,11 @@
-const { apitoken, apiurl } = require("./config.json");
+const { apiurl } = require("./config.json");
 
-function postFlags(flags) {
+function postFlags(flags, token) {
     return {
         method: "post",
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
-            "token": apitoken,
+            "token": token,
             ...flags
         })
     }
